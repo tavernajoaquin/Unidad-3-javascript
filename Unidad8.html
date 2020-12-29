@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS U3</title>
+    </head>
+    <body>
+
+        <form name="formu" method="POST" onsubmit="return miFuncion()" >
+            Nombre: <input type="text" name="nombre"><br>
+            Contraseña: <input type="password" name="contra"><br>
+            <input type="submit" value="Ingresar">
+        </form>
+
+        <script>
+
+            function miFuncion(){
+                var nombre=document.formu.nombre.value;
+                var contra=document.formu.contra.value;
+
+                if (contra==null || contra==""){
+                    alert("Ingrese una contraseña")
+                    return false;
+                }else {
+                    if(nombre.includes('@')){
+                        return true;
+                    }
+                    else{
+                        alert("El usuario debe contener un @")
+                    }
+                }
+            }
+        </script>
+         
+    </body>
+</html>
